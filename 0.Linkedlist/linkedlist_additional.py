@@ -104,5 +104,3 @@ def CustomFunc(item1: LinkedList, item2: LinkedList):
             node = node.next
             node2 = node2.next
         return new_list
-    else:
-        return None
