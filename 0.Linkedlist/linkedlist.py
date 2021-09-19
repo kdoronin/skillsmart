@@ -53,18 +53,25 @@ class LinkedList:
                     self.head = node.next
                     if all == False:
                         return
+                    else:
+                        node_prev = node.next
+                        node = node.next
                 elif node == self.tail:
                     node_prev.next = None
                     self.tail = node_prev
+                    node = node.next
                 else:
                     node_prev.next = node.next
                     if all == False:
                         return
-            if node == self.head:
-                node = node.next
+                    else:
+                        node = node.next
             else:
-                node_prev = node
-                node = node.next
+                if node == self.head:
+                    node = node.next
+                else:
+                    node_prev = node
+                    node = node.next
 
     def clean(self):
         self.head = None
