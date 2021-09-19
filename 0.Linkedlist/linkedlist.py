@@ -97,6 +97,10 @@ class LinkedList:
                     return
                 node = node.next
         else:
-            newNode.next = self.head.next
-            self.head = newNode
+            if self.head is None:
+                self.head = newNode
+                self.tail = newNode
+            else:
+                newNode.next = self.head.next
+                self.head = newNode 
         return

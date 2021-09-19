@@ -109,6 +109,7 @@ def CustomFunc(item1: LinkedList, item2: LinkedList):
 
 def MySimpleTest():
     my_list = LinkedList()
+    my_list.insert(None, Node(14))
     my_list.add_in_tail(Node(10))
     my_list.delete(10, False)
     my_list.print_all_nodes()
