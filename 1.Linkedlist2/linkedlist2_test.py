@@ -117,3 +117,24 @@ class LinkedList2:
             self.head.prev = newNode
             newNode.next = self.head
             self.head = newNode
+
+
+my_list = LinkedList2()
+#my_list.add_in_tail(Node(12))
+#my_list.add_in_tail(Node(16))
+#my_list.add_in_tail(Node(133))
+#my_list.add_in_tail(Node(15))
+n1 = Node(17)
+my_list.add_in_tail(n1)
+my_list.add_in_tail(Node(12))
+my_list.add_in_tail(Node(12))
+my_list.add_in_tail(Node(11))
+#my_list.add_in_head(Node(777))
+my_list.insert(None, Node(19))
+#output = my_list.find(16)
+#my_list.delete(12, True)
+my_list.print_all_nodes()
+print(my_list.head.value)
+print(my_list.tail.value)
+#print(output.next.value)
+#print(output.prev.value)
