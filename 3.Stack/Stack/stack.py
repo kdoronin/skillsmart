@@ -23,15 +23,11 @@ class Stack:
 def bracketsfunc(stack: Stack):
     sum = 0
     while stack.size() > 0:
-        current = stack.pop()
-        if current == ')':
+        if stack.peek() == ')':
             sum += 1
-        elif current == '(' and sum >= 0:
+        elif stack.peek() == '(' and sum >= 0:
             sum -= 1
         else:
             return False
-    if sum == 0:
-        return True
-    else:
-        return False
-
+        stack.pop()
+    return sum == 0
