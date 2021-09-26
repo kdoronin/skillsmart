@@ -20,11 +20,7 @@ class Stack:
         else:
             return None # если стек пустой
 
-def bracketsfunc(brackets: str):
-    stack = Stack()
-    print(len(brackets))
-    for i in brackets:
-        stack.push(i)
+def bracketsfunc(stack: Stack):
     sum = 0
     while stack.size() > 0:
         current = stack.pop()
@@ -33,9 +29,9 @@ def bracketsfunc(brackets: str):
         elif current == '(' and sum >= 0:
             sum -= 1
         else:
-            return 'Brackets are unbalanced'
+            return False
     if sum == 0:
-        return 'Brackets are balanced'
+        return True
     else:
-        return 'Brackets are unbalanced'
+        return False
 
