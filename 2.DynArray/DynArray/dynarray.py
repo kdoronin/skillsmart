@@ -56,6 +56,9 @@ class DynArray:
                 self.array[j] = self.array[j+1]
                 j += 1
             self.count -= 1
-            if self.count < self.capacity / 2:
-                self.resize(int(self.capacity / 1.5))
+            if self.count < self.capacity / 2 and self.capacity > 16:
+                if self.capacity / 1.5 < 16:
+                    self.resize(16)
+                else:
+                    self.resize(int(self.capacity / 1.5))
     # удаляем объект в позиции i
