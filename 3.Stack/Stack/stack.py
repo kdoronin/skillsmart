@@ -20,14 +20,13 @@ class Stack:
         else:
             return None # если стек пустой
 
-def bracketsfunc(stack: Stack):
-    sum = 0
-    while stack.size() > 0:
-        if stack.peek() == ')':
-            sum += 1
-        elif stack.peek() == '(' and sum >= 0:
-            sum -= 1
+def bracketsfunc(string: str):
+    stack = Stack()
+    for i in string:
+        if i == '(':
+            stack.push(i)
+        elif i == ')' and stack.size() > 0:
+            stack.pop()
         else:
             return False
-        stack.pop()
-    return sum == 0
+    return stack.size() == 0
