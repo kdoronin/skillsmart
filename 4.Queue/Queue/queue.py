@@ -16,3 +16,9 @@ class Queue:
 
     def size(self):
         return len(self.queue)
+
+    def rotateQueue(self, N: int):
+        for i in range(N):
+            self.enqueue(self.dequeue())
+            i += 1
+
