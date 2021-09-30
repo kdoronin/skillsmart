@@ -22,23 +22,21 @@ class Stack:
 
 class Queue:
     def __init__(self):
-        self.stackmain = Stack()
-        self.stackhelp = Stack()
+        self.stackin = Stack()
+        self.stackout = Stack()
 
     def enqueue(self, item):
-        self.stackmain.push(item)
+        self.stackin.push(item)
         # вставка в хвост
 
     def dequeue(self):
         if self.size() > 0:
-            while self.stackmain.size() > 0:
-                self.stackhelp.push(self.stackmain.pop())
-            output = self.stackhelp.pop()
-            while self.stackhelp.size() > 0:
-                self.stackmain.push(self.stackhelp.pop())
-            return output
+            if self.stackout.size() == 0:
+                while self.stackin.size() > 0:
+                    self.stackout.push(self.stackin.pop())
+            return self.stackout.pop()
         else:
             return None  # если очередь пустая
 
     def size(self):
-        return self.stackmain.size() # размер очереди
+        return self.stackin.size() + self.stackout.size() # размер очереди
