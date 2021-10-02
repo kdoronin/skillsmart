@@ -32,9 +32,7 @@ def palindromeCheck(inputString: list):
     de = Deque()
     for item in inputString:
         de.addFront(item)
-    while de.size() > 0:
-        if de.size() == 1:
-            return True
-        elif de.removeFront() != de.removeTail():
+    while de.size() > 1:
+        if de.removeFront() != de.removeTail():
             return False
     return True
