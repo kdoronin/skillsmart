@@ -77,6 +77,8 @@ class OrderedList:
         # в нужную позицию
 
     def find(self, val):
+        if self.head == None and self.tail == None:
+            return
         if ((self.compare(val, self.head.value) == -1 or self.compare(val, self.tail.value) == +1) and self.__ascending) or ((self.compare(val, self.head.value) == +1 or self.compare(val, self.tail.value) == -1) and self.__ascending == False):
             return None # здесь будет ваш код
         else:
@@ -98,6 +100,8 @@ class OrderedList:
                         node = node.next
 
     def delete(self, val):
+        if self.head == None and self.tail == None:
+            return
         if ((self.compare(val, self.head.value) == -1 or self.compare(val, self.tail.value) == +1) and self.__ascending) or ((self.compare(val, self.head.value) == +1 or self.compare(val, self.tail.value) == -1) and self.__ascending == False):
             return
         else:
@@ -174,3 +178,7 @@ class OrderedStringList(OrderedList):
             return 0
         else:
             return +1
+
+
+list = OrderedList(True)
+list.delete(1)
