@@ -105,7 +105,10 @@ class OrderedList:
             while node is not None:
                 if self.__ascending:
                     if self.compare(val, node.value) == 0:
-                        if node == self.tail:
+                        if node == self.tail and node == self.head:
+                            self.head = None
+                            self.tail = None
+                        elif node == self.tail:
                             node.prev.next = None
                             self.tail = node.prev
                         elif node == self.head:
@@ -121,7 +124,10 @@ class OrderedList:
                         node = node.next
                 else:
                     if self.compare(val, node.value) == 0:
-                        if node == self.tail:
+                        if node == self.tail and node == self.head:
+                            self.head = None
+                            self.tail = None
+                        elif node == self.tail:
                             node.prev.next = None
                             self.tail = node.prev
                         elif node == self.head:
