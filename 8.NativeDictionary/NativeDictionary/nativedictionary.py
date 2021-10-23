@@ -50,7 +50,6 @@ class NativeDictionary:
         index = self.seek_slot(key)
         self.slots[index] = key
         self.values[index] = value
-        return index
         # гарантированно записываем
         # значение value по ключу key
 
