@@ -10,28 +10,11 @@ class NativeDictionary:
         # всегда возвращает корректный индекс слота
         return index
 
-    def seek_slot(self, key):
-        # находит индекс пустого слота для значения, или None
-        index = self.hash_fun(key)
-        if self.slots[index] is None:
-            return index
-        else:
-            i = 0
-            while i < self.size:
-                index += 1
-                if index >= self.size:
-                    index = index - self.size
-                if self.slots[index] is None:
-                    return index
-                else:
-                    i += 1
-            return None
-
     def is_key(self, key):
         # возвращает True если ключ имеется,
         index = self.hash_fun(key)
         if self.slots[index] == key:
-            return index
+            return True
         else:
             i = 0
             while i < self.size:
@@ -47,9 +30,21 @@ class NativeDictionary:
             return False
 
     def put(self, key, value):
-        index = self.seek_slot(key)
-        self.slots[index] = key
-        self.values[index] = value
+        index = self.hash_fun(key)
+        if self.slots[index] is None:
+            self.slots[index] = key
+            self.values[index] = value
+        else:
+            i = 0
+            while i < self.size:
+                index += 1
+                if index >= self.size:
+                    index = index - self.size
+                if self.slots[index] is None:
+                    self.slots[index] = key
+                    self.values[index] = value
+                else:
+                    i += 1
         # гарантированно записываем
         # значение value по ключу key
 
