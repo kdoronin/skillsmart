@@ -6,7 +6,7 @@ class NativeDictionary:
 
     def hash_fun(self, value):
         # в качестве value поступают строки!
-        index = len(value)%self.size
+        index = len(value) % self.size
         # всегда возвращает корректный индекс слота
         return index
 
@@ -34,6 +34,7 @@ class NativeDictionary:
         if self.slots[index] is None:
             self.slots[index] = key
             self.values[index] = value
+            return
         else:
             i = 0
             while i < self.size:
@@ -43,8 +44,10 @@ class NativeDictionary:
                 if self.slots[index] is None:
                     self.slots[index] = key
                     self.values[index] = value
+                    return
                 else:
                     i += 1
+            return
         # гарантированно записываем
         # значение value по ключу key
 
