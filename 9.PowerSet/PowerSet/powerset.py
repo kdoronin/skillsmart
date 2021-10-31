@@ -11,7 +11,7 @@ class PowerSet:
 
     def put(self, value):
         if not self.get(value):
-            self.dict[value].append(value)
+            self.dict[value] = value
         # всегда срабатывает
 
     def get(self, value):
