@@ -27,8 +27,6 @@ class BloomFilter:
     def add(self, str1):
         hash1 = 0b1 << self.hash1(str1)
         hash2 = 0b1 << self.hash2(str1)
-        print(hash1)
-        print(hash2)
         self.filter = self.filter | hash1
         self.filter = self.filter | hash2
         # добавляем строку str1 в фильтр
