@@ -43,7 +43,7 @@ class SimpleTree:
             all_nodes.append(current_node)
         if current_node.Children:
             for child in current_node.Children:
-                all_nodes = self.FindNode(child, val, all_nodes)
+                all_nodes = self.find_node(child, val, all_nodes)
         return all_nodes
 
     def MoveNode(self, OriginalNode, NewParent):
