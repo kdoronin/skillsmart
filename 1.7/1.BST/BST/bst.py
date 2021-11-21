@@ -68,7 +68,9 @@ class BST:
                     found_node.Node.RightChild = new_node
             else:
                 self.Root = new_node
+            new_node.Parent = found_node.Node
         self.Number += 1
+        return True
 
 
     def FinMinMax(self, FromNode, FindMax):
