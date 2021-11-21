@@ -23,7 +23,10 @@ class BST:
 
     def __init__(self, node):
         self.Root = node  # корень дерева, или None
-        self.Number = 0
+        if node is None:
+            self.Number = 0
+        else:
+            self.Number = 1
 
     def FindNodeByKey(self, key):
         # ищем в дереве узел и сопутствующую информацию по ключу
