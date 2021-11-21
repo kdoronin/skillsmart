@@ -69,7 +69,6 @@ class BST:
             else:
                 self.Root = new_node
         self.Number += 1
-        return True
 
 
     def FinMinMax(self, FromNode, FindMax):
