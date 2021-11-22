@@ -159,15 +159,3 @@ class BST:
 
     def Count(self):
         return self.Number  # количество узлов в дереве
-
-
-mytree = BST(None)
-print(mytree.AddKeyValue(2, 'test'))
-find_node = mytree.FindNodeByKey(2)
-print(find_node.Node.NodeKey)
-print(mytree.AddKeyValue(3, 'test2'))
-find_node = mytree.FindNodeByKey(3)
-print(find_node.Node.NodeKey)
-print(mytree.AddKeyValue(1, 'test22'))
-find_node = mytree.FindNodeByKey(1)
-print(find_node.Node.NodeKey)
