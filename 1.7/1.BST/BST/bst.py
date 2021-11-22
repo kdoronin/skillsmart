@@ -35,16 +35,19 @@ class BST:
     def check_current_node(self, node, key):
         if node is None:
             return_node = BSTFind()
+            return return_node
         elif node.NodeKey == key:
             return_node = BSTFind()
             return_node.Node = node
             return_node.NodeHasKey = True
+            return return_node
         elif key > node.NodeKey:
             if node.RightChild is not None:
                 return self.check_current_node(node.RightChild, key)
             else:
                 return_node = BSTFind()
                 return_node.Node = node
+                return return_node
         else:
             if node.LeftChild is not None:
                 return self.check_current_node(node.LeftChild, key)
@@ -52,7 +55,7 @@ class BST:
                 return_node = BSTFind()
                 return_node.Node = node
                 return_node.ToLeft = True
-        return return_node
+                return return_node
 
     def AddKeyValue(self, key, val):
         # добавляем ключ-значение в дерево
@@ -68,8 +71,8 @@ class BST:
                     found_node.Node.RightChild = new_node
             else:
                 self.Root = new_node
-        self.Number += 1
-        return True
+            self.Number += 1
+            return True
 
     def FinMinMax(self, FromNode, FindMax):
         # ищем максимальный/минимальный ключ в поддереве
@@ -156,3 +159,15 @@ class BST:
 
     def Count(self):
         return self.Number  # количество узлов в дереве
+
+
+mytree = BST(None)
+print(mytree.AddKeyValue(2, 'test'))
+find_node = mytree.FindNodeByKey(2)
+print(find_node.Node.NodeKey)
+print(mytree.AddKeyValue(3, 'test2'))
+find_node = mytree.FindNodeByKey(3)
+print(find_node.Node.NodeKey)
+print(mytree.AddKeyValue(1, 'test22'))
+find_node = mytree.FindNodeByKey(1)
+print(find_node.Node.NodeKey)
