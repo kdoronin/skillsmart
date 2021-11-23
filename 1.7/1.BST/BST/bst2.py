@@ -95,7 +95,7 @@ class BST:
             return False  # если узел не найден
         else:
             node = find_node.Node
-            if node == node.Parent.LeftChild:
+            if node.Parent is not None and node == node.Parent.LeftChild:
                 left = True
             else:
                 left = False
