@@ -109,6 +109,16 @@ class TestBST(unittest.TestCase):
         self.find_delete_node = self.full_tree.FindNodeByKey(4)
         self.assertFalse(self.find_delete_node.NodeHasKey)
         self.assertNotEqual(self.full_tree.Root.LeftChild.NodeKey, 4)
+        self.find_after_delete = self.full_tree.FindNodeByKey(5)
+        self.assertTrue(self.find_after_delete.NodeHasKey)
+        self.find_after_delete = self.full_tree.FindNodeByKey(1)
+        self.assertTrue(self.find_after_delete.NodeHasKey)
+        self.find_after_delete = self.full_tree.FindNodeByKey(3)
+        self.assertTrue(self.find_after_delete.NodeHasKey)
+        self.find_after_delete = self.full_tree.FindNodeByKey(6)
+        self.assertTrue(self.find_after_delete.NodeHasKey)
+        self.find_after_delete = self.full_tree.FindNodeByKey(7)
+        self.assertTrue(self.find_after_delete.NodeHasKey)
         #Тестируем удаление корня
         self.assertTrue(self.test_tree1.DeleteNodeByKey(5))
     def test_count(self):

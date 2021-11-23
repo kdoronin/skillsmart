@@ -100,7 +100,7 @@ class BST:
             else:
                 left = False
             if node.RightChild is not None:
-                min_leaf = self.FinMinMax(node, False)
+                min_leaf = self.FinMinMax(node.RightChild, False)
                 new_node = self.delete_leaf(min_leaf, True)
                 self.insert_node(new_node, node.Parent, left)
                 self.Number -= 1
