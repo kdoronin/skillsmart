@@ -107,10 +107,12 @@ class BST:
                             node.Parent.LeftChild = node.RightChild
                             node.RightChild.Parent = node.Parent
                             node.RightChild.LeftChild = node.LeftChild
+                            node.RightChild.LeftChild.Parent = node.RightChild
                         else:
                             node.Parent.RightChild = node.RightChild
                             node.RightChild.Parent = node.Parent
                             node.RightChild.LeftChild = node.LeftChild
+                            node.RightChild.LeftChild.Parent = node.RightChild
                     else:
                         node.RightChild.Parent = None
                         self.Root = node.RightChild
@@ -158,21 +160,6 @@ class BST:
             else:
                 self.Root = None
 
-    def insert_node(self, node, parent, left):
-        if parent is None:
-            node.Parent = None
-            self.Root = node
-            return node
-        else:
-            if left:
-                node.Parent = parent
-                parent.LeftChild = node
-                return node
-            else:
-                node.Parent = parent
-                parent.LeftChild = node
-                return node
-
     def insert_leaf(self, node, parent, left):
         if parent is None:
             node.LeftChild = self.Root.LeftChild
@@ -196,7 +183,7 @@ class BST:
                 node.LeftChild.Parent = node
                 node.RightChild.Parent = node
                 node.Parent = parent
-                parent.LeftChild = node
+                parent.RightChild = node
                 return node
 
     def delete_min_leaf(self, node, left):
