@@ -99,43 +99,118 @@ class BST:
                 left = True
             else:
                 left = False
-            if node.RightChild is not None:
-                min_leaf = self.FinMinMax(node.RightChild, False)
-                new_node = self.delete_leaf(min_leaf, True)
-                self.insert_node(new_node, node.Parent, left)
-                self.Number -= 1
-                return True
-            elif node.LeftChild is not None:
-                self.insert_node(node.LeftChild, node.Parent, left)
-                self.Number -= 1
-                return True
+            if node.RightChild is not None and node.LeftChild is not None:
+                min_node = self.FinMinMax(node.RightChild, False)
+                if min_node == node.RightChild:
+                    if node.Parent is not None:
+                        if left:
+                            node.Parent.LeftChild = node.RightChild
+                            node.RightChild.Parent = node.Parent
+                        else:
+                            node.Parent.RightChild = node.RightChild
+                            node.RightChild.Parent = node.Parent
+                    else:
+                        node.RightChild.Parent = None
+                        self.Root = node.RightChild
+                    self.Number -= 1
+                    return True
+                else:
+                    new_node = self.delete_min_leaf(min_node, True)
+                    self.insert_leaf(new_node, node.Parent, left)
+                    self.Number -= 1
+                    return True
             else:
-                self.delete_leaf(node, left)
+                self.simple_delete_node(node, node.Parent, left)
                 self.Number -= 1
                 return True
 
+    def simple_delete_node(self, node, parent, left):
+        if node.RightChild is not None:
+            if parent is not None:
+                if left:
+                    parent.LeftChild = node.RightChild
+                    node.RightChild.Parent = parent
+                else:
+                    parent.RightChild = node.RightChild
+                    node.RightChild.Parent = parent
+            else:
+                node.RightChild.Parent = None
+                self.Root = node.RightChild
+        elif node.LeftChild is not None:
+            if parent is not None:
+                if left:
+                    parent.LeftChild = node.LeftChild
+                    node.LeftChild.Parent = parent
+                else:
+                    parent.RightChild = node.LeftChild
+                    node.LeftChild.Parent = parent
+            else:
+                node.LeftChild.Parent = None
+                self.Root = node.LeftChild
+        else:
+            if parent is not None:
+                if left:
+                    parent.LeftChild = None
+                else:
+                    parent.RightChild = None
+            else:
+                self.Root = None
+
     def insert_node(self, node, parent, left):
+        if parent is None:
+            node.Parent = None
+            self.Root = node
+            return node
+        else:
+            if left:
+                node.Parent = parent
+                parent.LeftChild = node
+                return node
+            else:
+                node.Parent = parent
+                parent.LeftChild = node
+                return node
+
+    def insert_leaf(self, node, parent, left):
         if parent is None:
             node.LeftChild = self.Root.LeftChild
             node.RightChild = self.Root.RightChild
+            node.RightChild.Parent = node
+            node.LeftChild.Parent = node
             self.Root = node
             return node
         else:
             if left:
                 node.LeftChild = parent.LeftChild.LeftChild
                 node.RightChild = parent.LeftChild.RightChild
+                node.LeftChild.Parent = node
+                node.RightChild.Parent = node
                 node.Parent = parent
                 parent.LeftChild = node
                 return node
             else:
                 node.LeftChild = parent.RightChild.LeftChild
                 node.RightChild = parent.RightChild.RightChild
+                node.LeftChild.Parent = node
+                node.RightChild.Parent = node
                 node.Parent = parent
                 parent.LeftChild = node
+                return node
 
-    def delete_leaf(self, node, left):
-        if node.RightChild is not None or node.LeftChild is not None:
+    def delete_min_leaf(self, node, left):
+        if node.LeftChild is not None:
             return False
+        elif node.RightChild is not None:
+            if left:
+                node.Parent.LeftChild = node.RightChild
+                node.RightChild.Parent = node.Parent
+                node.Parent = None
+                return node
+            else:
+                node.Parent.RightChild = node.RightChild
+                node.RightChild.Parent = node.Parent
+                node.Parent = None
+                return node
         elif node.Parent is None:
             node.Parent = None
             self.Root = None
