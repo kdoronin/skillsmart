@@ -106,9 +106,11 @@ class BST:
                         if left:
                             node.Parent.LeftChild = node.RightChild
                             node.RightChild.Parent = node.Parent
+                            node.RightChild.LeftChild = node.LeftChild
                         else:
                             node.Parent.RightChild = node.RightChild
                             node.RightChild.Parent = node.Parent
+                            node.RightChild.LeftChild = node.LeftChild
                     else:
                         node.RightChild.Parent = None
                         self.Root = node.RightChild
