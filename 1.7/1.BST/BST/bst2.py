@@ -216,3 +216,70 @@ class BST:
 
     def Count(self):
         return self.Number  # количество узлов в дереве
+
+    def WideAllNodes(self):
+        first_lvl_array = []
+        finaltuple = []
+        if self.Root is not None:
+            first_lvl_array.append(self.Root)
+            self.WideOneLvl(first_lvl_array, finaltuple)
+        return tuple(finaltuple)
+
+    def WideOneLvl(self, nodearray, finaltuple):
+        next_lvl = []
+        for i in nodearray:
+            finaltuple.append(i)
+            if i.LeftChild is not None:
+                next_lvl.append(i.LeftChild)
+            if i.RightChild is not None:
+                next_lvl.append(i.RightChild)
+        if not next_lvl:
+            return finaltuple
+        else:
+            return self.WideOneLvl(next_lvl, finaltuple)
+
+
+    def DeepAllNodes(self, prm):
+        finaltuple = []
+        node = self.Root
+        if node is None:
+            return tuple(finaltuple)
+        if prm == 0:
+            if node.LeftChild is not None:
+                self.DeepOneLvl(node.LeftChild, finaltuple, prm)
+            finaltuple.append(node)
+            if node.RightChild is not None:
+                self.DeepOneLvl(node.RightChild, finaltuple, prm)
+        elif prm == 1:
+            if node.LeftChild is not None:
+                self.DeepOneLvl(node.LeftChild, finaltuple, prm)
+            if node.RightChild is not None:
+                self.DeepOneLvl(node.RightChild, finaltuple, prm)
+            finaltuple.append(node)
+        else:
+            finaltuple.append(node)
+            if node.LeftChild is not None:
+                self.DeepOneLvl(node.LeftChild, finaltuple, prm)
+            if node.RightChild is not None:
+                self.DeepOneLvl(node.RightChild, finaltuple, prm)
+        return tuple(finaltuple)
+
+    def DeepOneLvl(self, node, finaltuple, prm):
+        if prm == 0:
+            if node.LeftChild is not None:
+                self.DeepOneLvl(node.LeftChild, finaltuple, prm)
+            finaltuple.append(node)
+            if node.RightChild is not None:
+                self.DeepOneLvl(node.RightChild, finaltuple, prm)
+        elif prm == 1:
+            if node.LeftChild is not None:
+                self.DeepOneLvl(node.LeftChild, finaltuple, prm)
+            if node.RightChild is not None:
+                self.DeepOneLvl(node.RightChild, finaltuple, prm)
+            finaltuple.append(node)
+        else:
+            finaltuple.append(node)
+            if node.LeftChild is not None:
+                self.DeepOneLvl(node.LeftChild, finaltuple, prm)
+            if node.RightChild is not None:
+                self.DeepOneLvl(node.RightChild, finaltuple, prm)

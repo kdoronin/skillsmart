@@ -147,3 +147,18 @@ class TestBST(unittest.TestCase):
         self.assertEqual(self.test_tree1.Count(), 1)
         self.assertTrue(self.full_tree.DeleteNodeByKey(7))
         self.assertEqual(self.full_tree.Count(), 14)
+    def test_wide(self):
+        wide_result = self.full_tree.WideAllNodes()
+        self.assertEqual(wide_result[0], self.full_tree.Root)
+        self.assertEqual(wide_result[1], self.full_tree.Root.LeftChild)
+        self.assertEqual(wide_result[2], self.full_tree.Root.RightChild)
+    def test_deep(self):
+        deep_result = self.full_tree.DeepAllNodes(0)
+        deep_result1 = self.full_tree.DeepAllNodes(1)
+        deep_result2 = self.full_tree.DeepAllNodes(2)
+        self.assertEqual(len(deep_result), 15)
+        self.assertEqual(len(deep_result1), 15)
+        self.assertEqual(len(deep_result2), 15)
+        self.assertEqual(deep_result[7], self.full_tree.Root)
+        self.assertEqual(deep_result1[14], self.full_tree.Root)
+        self.assertEqual(deep_result2[0], self.full_tree.Root)
