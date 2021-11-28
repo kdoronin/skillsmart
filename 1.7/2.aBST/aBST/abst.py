@@ -53,8 +53,10 @@ class aBST:
             return -1
         if self.Tree[index] is None:
             self.Tree[index] = key
-            return True
-        elif key >= self.Tree[index]:
+            return index
+        elif key == self.Tree[index]:
+            return index
+        elif key > self.Tree[index]:
             return self.add_one_step(key, 2*index + 2)
         else:
             return self.add_one_step(key, 2*index + 1)
