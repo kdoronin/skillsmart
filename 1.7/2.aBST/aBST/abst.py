@@ -14,20 +14,17 @@ class aBST:
         if index >= self.tree_size:
             return None
         if self.Tree[index] is None:
-            return None
+            if index > 0:
+                return -index
+            else:
+                return index
         else:
             if self.Tree[index] == key:
                 return index
             elif key > self.Tree[index]:
-                if self.get_right_child(index) is not None:
-                    return self.find_key_index_step(key, 2*index + 2)
-                else:
-                    return None
+                return self.find_key_index_step(key, 2*index + 2)
             else:
-                if self.get_left_child(index) is not None:
-                    return self.find_key_index_step(key, 2*index + 1)
-                else:
-                    return None
+                return self.find_key_index_step(key, 2*index + 1)
 
     def get_left_child(self, index):
         child_index = 2*index + 1

@@ -42,10 +42,14 @@ class TestaBST(unittest.TestCase):
 
     def test_find_key_index(self):
         find_one = self.empty_abst.FindKeyIndex(3)
-        self.assertIsNone(find_one)
+        self.assertEqual(find_one, 0)
         find_two = self.full_abst.FindKeyIndex(8)
         self.assertEqual(find_two, 0)
         find_three = self.full_abst.FindKeyIndex(1)
         self.assertEqual(find_three, 7)
         find_four = self.full_abst.FindKeyIndex(11)
         self.assertEqual(find_four, 12)
+        find_five = self.full_abst.FindKeyIndex(16)
+        self.assertIsNone(find_five)
+        find_six = self.only_one_abst.FindKeyIndex(3)
+        self.assertEqual(find_six, 0)
