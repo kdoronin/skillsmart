@@ -50,6 +50,10 @@ class testHeap(unittest.TestCase):
         correct_second_array = [2, 1]
         self.assertEqual(self.second_heap.HeapArray[0], correct_second_array[0])
         self.assertEqual(self.second_heap.HeapArray[1], correct_second_array[1])
+        max_second2 = self.second_heap.GetMax()
+        self.assertEqual(max_second2, 2)
+        max_second3 = self.second_heap.GetMax()
+        self.assertEqual(max_second3, 1)
 
 
     def test_add(self):

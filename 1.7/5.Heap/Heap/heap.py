@@ -59,13 +59,14 @@ class Heap:
             self.HeapArray[0] = None
             if self.HeapArray[-1] is None:
                 i = self.size - 1
-                while self.HeapArray[i] is None:
+                while self.HeapArray[i] is None and i > 0:
                     i -= 1
             else:
                 i = self.size - 1
             last = self.HeapArray[i]
             self.HeapArray[i] = None
-            self.set_new_root(last, 0)
+            if i != 0:
+                self.set_new_root(last, 0)
             return old_head
         else:
             return -1  # если куча пуста
