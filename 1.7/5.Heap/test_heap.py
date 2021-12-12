@@ -13,6 +13,9 @@ class testHeap(unittest.TestCase):
         self.array3 = [11, 9, 8, 7, 6, 5, 4, 3, 2, 1]
         self.third_heap = Heap()
         self.third_heap.MakeHeap(self.array3, 3)
+        self.array4 = [1]
+        self.four_heap = Heap()
+        self.four_heap.MakeHeap(self.array4, 0)
 
 
     def test_make_heap(self):
@@ -40,11 +43,15 @@ class testHeap(unittest.TestCase):
     def test_get_max(self):
         max_first = self.first_heap.GetMax()
         self.assertEqual(max_first, 11)
-        correct_array = [9, 7, 4, 6, 8, 3, 1, 2, 5]
+        correct_array = [9, 8, 4, 7, 6, 3, 1, 2, 5]
         p = 0
         for i in correct_array:
             self.assertEqual(self.first_heap.HeapArray[p], i)
             p += 1
+        max_first_2 = self.first_heap.GetMax()
+        self.assertEqual(max_first_2, 9)
+        max_first_3 = self.first_heap.GetMax()
+        self.assertEqual(max_first_3, 8)
         max_second = self.second_heap.GetMax()
         self.assertEqual(max_second, 3)
         correct_second_array = [2, 1]
@@ -54,6 +61,10 @@ class testHeap(unittest.TestCase):
         self.assertEqual(max_second2, 2)
         max_second3 = self.second_heap.GetMax()
         self.assertEqual(max_second3, 1)
+        max_second4 = self.second_heap.GetMax()
+        self.assertEqual(max_second4, -1)
+        max_four = self.four_heap.GetMax()
+        self.assertEqual(max_four, 1)
 
 
     def test_add(self):

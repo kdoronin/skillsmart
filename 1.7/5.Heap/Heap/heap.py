@@ -76,7 +76,14 @@ class Heap:
         left_index = 2 * index + 1
         right_child = self.get_right_child(index)
         right_index = 2 * index + 2
-        if left_child is not None:
+        if left_child is not None and right_child is not None:
+            if left_child > el and left_child > right_child:
+                self.HeapArray[index] = left_child
+                return self.set_new_root(el, left_index)
+            elif right_child > el and right_child > left_child:
+                self.HeapArray[index] = right_child
+                return self.set_new_root(el, right_index)
+        elif left_child is not None:
             if left_child > el:
                 self.HeapArray[index] = left_child
                 return self.set_new_root(el, left_index)
