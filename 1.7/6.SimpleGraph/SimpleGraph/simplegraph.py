@@ -16,7 +16,7 @@ class SimpleGraph:
             i = 0
             while self.vertex[i] is not None and i < len(self.vertex):
                 i += 1
-            self.vertex[i] = v
+            self.vertex[i] = Vertex(v)
         else:
             return False
         # ваш код добавления новой вершины
@@ -28,43 +28,27 @@ class SimpleGraph:
     # в списке  vertex
     def RemoveVertex(self, v):
         # ваш код удаления вершины со всеми её рёбрами
-        try:
-            vertex_index = self.vertex.index(v)
-        except:
-            return False
-        self.vertex.pop(vertex_index)
-        self.m_adjacency.pop(vertex_index)
-        self.vertex.append(None)
-        self.m_adjacency.append([0] * self.max_vertex)
+        if v < self.max_vertex:
+            self.vertex.pop(v)
+            self.m_adjacency.pop(v)
+            self.vertex.append(None)
+            self.m_adjacency.append([0] * self.max_vertex)
 
     def IsEdge(self, v1, v2):
         # True если есть ребро между вершинами v1 и v2
-        try:
-            index1 = self.vertex.index(v1)
-            index2 = self.vertex.index(v2)
-        except:
-            return False
-        if self.m_adjacency[index1][index2] == 1 and self.m_adjacency[index2][index1] == 1:
-            return True
-        else:
-            return False
+        if v1 < self.max_vertex and v2 < self.max_vertex:
+            if self.m_adjacency[v1][v2] == 1 and self.m_adjacency[v2][v1] == 1:
+                return True
+        return False
 
     def AddEdge(self, v1, v2):
         # добавление ребра между вершинами v1 и v2
-        try:
-            index1 = self.vertex.index(v1)
-            index2 = self.vertex.index(v2)
-        except:
-            return False
-        self.m_adjacency[index1][index2] = 1
-        self.m_adjacency[index2][index1] = 1
+        if v1 < self.max_vertex and v2 < self.max_vertex:
+            self.m_adjacency[v1][v2] = 1
+            self.m_adjacency[v2][v1] = 1
 
     def RemoveEdge(self, v1, v2):
-        try:
-            index1 = self.vertex.index(v1)
-            index2 = self.vertex.index(v2)
-        except:
-            return False
-        self.m_adjacency[index1][index2] = 0
-        self.m_adjacency[index2][index1] = 0
+        if v1 < self.max_vertex and v2 < self.max_vertex:
+            self.m_adjacency[v1][v2] = 0
+            self.m_adjacency[v2][v1] = 0
         # удаление ребра между вершинами v1 и v2
