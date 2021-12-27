@@ -79,3 +79,20 @@ class SimpleTree:
         else:
             num += 1
         return num
+
+    def EvenTrees(self):
+        mylist = []
+        self.even_step(self.Root, mylist)
+        return mylist
+
+    def even_step(self, node, mylist):
+        if node.Children:
+            for i in node.Children:
+                node_count = self.count_node(i, 0)
+                if node_count % 2 == 0:
+                    mylist.append(node)
+                    mylist.append(i)
+                    if node_count > 4:
+                        self.even_step(i, mylist)
+                elif node_count > 3:
+                    self.even_step(i, mylist)
