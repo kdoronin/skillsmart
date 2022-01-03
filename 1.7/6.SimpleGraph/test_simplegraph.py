@@ -71,3 +71,22 @@ class testSimpleGraph(unittest.TestCase):
         self.assertFalse(self.five_elements_graph.IsEdge(0, 1))
         self.five_elements_graph.AddEdge(0, 1)
         self.assertTrue(self.five_elements_graph.IsEdge(0, 1))
+
+    def test_dfs(self):
+        self.five_elements_graph.AddEdge(0, 1)
+        self.five_elements_graph.AddEdge(2, 0)
+        self.five_elements_graph.AddEdge(2, 3)
+        self.five_elements_graph.AddEdge(0, 3)
+        self.five_elements_graph.AddEdge(1, 3)
+        self.five_elements_graph.AddEdge(1, 4)
+        self.five_elements_graph.AddEdge(3, 4)
+        self.five_elements_graph.AddEdge(3, 3)
+        self.five_elements_graph.RemoveEdge(1, 4)
+        first_way = self.five_elements_graph.DepthFirstSearch(0, 4)
+        good_way = [self.five_elements_graph.vertex[0], self.five_elements_graph.vertex[1], self.five_elements_graph.vertex[3], self.five_elements_graph.vertex[4]]
+        self.assertEqual(first_way, good_way)
+        self.five_elements_graph.RemoveEdge(3, 4)
+        second_way = self.five_elements_graph.DepthFirstSearch(2, 4)
+        good_way = []
+        self.assertEqual(second_way, good_way)
+
