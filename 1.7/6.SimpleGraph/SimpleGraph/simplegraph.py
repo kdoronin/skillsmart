@@ -126,7 +126,24 @@ class SimpleGraph:
             return self.bfs_step(worked_queue.dequeue(), VTo, worked_queue, worked_tree)
         return False
 
+    def WeakVertices(self):
+        collect_list = []
+        output_list = []
+        for i in range(self.max_vertex):
+            collect_list.append([])
+            for j in range(self.max_vertex):
+                if self.m_adjacency[i][j] == 1 and i != j and self.vertex[j] not in output_list:
+                    collect_list[i].append(j)
+            self.check_vertexes(self.vertex[i], collect_list[i], output_list)
+        return output_list
 
+    def check_vertexes(self, vertex, collect_list, output_list):
+        for i in collect_list:
+            for j in collect_list:
+                if self.m_adjacency[i][j] == 1 and i != j:
+                    return
+        output_list.append(vertex)
+        return
 
 class Queue:
     def __init__(self):

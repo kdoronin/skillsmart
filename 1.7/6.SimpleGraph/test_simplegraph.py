@@ -111,4 +111,27 @@ class testSimpleGraph(unittest.TestCase):
         good_way = []
         self.assertEqual(second_way, good_way)
 
+    def test_weak_vertices(self):
+        self.five_elements_graph.AddEdge(0, 1)
+        self.five_elements_graph.AddEdge(2, 0)
+        self.five_elements_graph.AddEdge(2, 3)
+        self.five_elements_graph.AddEdge(0, 3)
+        self.five_elements_graph.AddEdge(1, 3)
+        self.five_elements_graph.AddEdge(1, 4)
+        self.five_elements_graph.AddEdge(3, 4)
+        self.five_elements_graph.AddEdge(3, 3)
+        first_array = self.five_elements_graph.WeakVertices()
+        first_correct = []
+        self.assertEqual(first_array, first_correct)
+        self.five_elements_graph.RemoveEdge(3, 4)
+        second_array = self.five_elements_graph.WeakVertices()
+        second_correct = [self.five_elements_graph.vertex[4]]
+        self.assertEqual(second_array, second_correct)
+        self.five_elements_graph.RemoveEdge(1, 3)
+        self.five_elements_graph.AddEdge(3, 4)
+        third_array = self.five_elements_graph.WeakVertices()
+        self.assertEqual(len(third_array), 2)
+        self.assertTrue(self.five_elements_graph.vertex[4] in third_array)
+        self.assertTrue(self.five_elements_graph.vertex[1] in third_array)
+
 
