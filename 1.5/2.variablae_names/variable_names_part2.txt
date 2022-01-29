@@ -1,0 +1,53 @@
+// 6.1
+$order_qty – $orderItemCount
+// Количество товаров в заказе
+
+$return_array – $blackListOrdersArray
+// Массив заказов из чёрного списка
+
+$product_price – $cartItemPrice
+// Цена товара в корзине при выводе на экран. В данном контексте является элементом корзины, а не продуктом.
+
+$thumbnail – $cartItemThumbnail
+// Изображение товара в корзине
+
+$product_name – $cartItemTitle
+// Заголовок товара в корзине
+
+// 6.2
+$myarray – $orderObjectArray
+// Объект заказа, переведённый в массив
+
+$data – $orderDataArray
+// Данные заказа в массиве
+
+$query – $databaseQuery
+// Строковая переменная, которая хронит запрос в базу данных
+
+$trustpilot – $trustpilotHookName
+//Имя хука, который отправляет данные в trustpilot
+
+// 6.3
+Метод WowArmorTypes, который работает с переменными $mail, $plate, $cloth, $leather
+
+Метод ShowOrderDetails с переменными $total, $itemsArray, $order_id, $billingAddress, $shippingAddress
+
+Метод PopupModel с переменными $title, $content, $type, $buttonText, $image, $action
+
+Класс
+
+// 6.4
+$option – $orderOption
+// Опция заказа
+
+$item_id – $orderItemId
+// ID элемента заказа
+
+$link – $mysqliConnectURL
+// Ссылка для подключения к базе данных
+
+$faction – $userFaction
+// Фракция пользователя
+
+$price – $totalPrice
+// Итоговая цена
