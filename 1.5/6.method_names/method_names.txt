@@ -1,0 +1,37 @@
+getWowordersResult – getWowordersSqlResult
+// до изменения было непонятно, что за результат получаем в итоге
+
+wooGetTermParents – getWooTermParents
+// структура глагол + сущность сохранена
+
+getFieldGroups – getGameFieldGroups
+// получаем группу полей именно по игре
+
+getOptions – getBlizzardScrapperServers
+// получает список серверов со скраппера
+
+loot_system_session – get_loot_system_from_session
+// получает лут-систему из глобальной переменной SESSION
+
+difficulty_session – get_difficulty_from_session
+// получает сложность из глобальной переменной SESSION
+
+setupVariation – setVariation
+// устанавливает вариацию
+
+add_ending_slash – add_slash_to_path_end
+// добавляет слэш к концу переданного пути
+
+del_dir_content – del_content_from_directory
+// удаляет контент из директории
+
+script – enqueue_script
+// добавляет скрипт
+
+registerGetEventItemData – getEventItemData
+// получает данные по элементу события
+
+regionConditionIdBySlug – setRegionConditionIdBySlug
+// устанавливает зависимость ID региона от слага
+
+
