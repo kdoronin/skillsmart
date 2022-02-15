@@ -1,0 +1,26 @@
+$game_dir_assets – DONUT_GAME_ASSETS_DIR
+// была введена переменная вместо константы. Помимо смены имени, также изменили место определения и добавили название игры
+
+HTTP_ORIGIN – HTTP_CORS_ORIGIN
+// добавлено, к чему именно относится ORIGIN
+
+SAVEQUERIES – ENABLE_SAVE_QUERIES
+// активировать безопасные запросы
+
+DISALLOW_FILE_MODS – ALLOW_FILE_MODS
+// лишнее отрицание в имени переменной
+
+DISALLOW_FILE_EDIT – ALLOW_FILE_EDIT
+// аналогично предыдущему пункту
+
+SCRAPER – SCREPER_URL
+// отсутствует понимание, что именно хранится в переменной
+
+display_errors – DISPLAY_ERRORS
+// смена регистра имени константы
+
+DOING_CRON – CRON_ENABLED
+// проверяет, активирован ли cron
+
+
+
