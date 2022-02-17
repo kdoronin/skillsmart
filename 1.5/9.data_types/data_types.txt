@@ -1,0 +1,73 @@
+$checkboxes_price = $checkboxes_price / $currency_list[$current_currency]['rate'];
+=>
+if($currency_list[$current_currency]['rate'] > 0) {
+    $checkboxes_price = $checkboxes_price / $currency_list[$current_currency]['rate'];
+}
+// Проверка на значение большее нуля, так как курс валюты не может быть отрицательным числом
+
+
+$rating = round($rating / $products_count, 2);
+=>
+if($products_count !== 0) {
+    $rating = round($rating / $products_count, 2);
+}
+// Что интересно, в исходном варианте кода, при объявлении переменной $products_count, сначала ей присваивается 0
+
+
+if (count($sqlFull) == 0) => if (count($sqlFull) === 0)
+// замена на строгую типизацию без приведения типов
+
+
+if (isset($_POST['get']) and $_POST['get'] == 'search')
+=>
+SEARCH_TYPE = 'search';
+if (isset($_POST['get']) and $_POST['get'] === SEARCH_TYPE)
+// убрал приведение типов и объявил константу
+
+
+// в системе, с которой я работаю, есть встроенные инструменты для перевода текстовых констант на другие языки.
+Данную систему внедрил примерно за месяц до прохождения данного урока
+
+
+$value = $matches[2] / $matches[3]; => if($matches[3] !== 0) $value = $matches[2] / $matches[3];
+//добавил проверку на не ноль
+
+$data['status'] = 3;
+=>
+TRUSTPILOT_MESSAGE_SENDED = 3;
+$data['status'] = TRUSTPILOT_SENDED_MESSAGE;
+// отдельной константой завёл значение, когда пользователю отправлено сообщение с предложением подписаться на TP
+
+
+$data['status'] = 2;
+=>
+TRUSTPILOT_MESSAGE_ERROR = 2;
+$data['status'] = TRUSTPILOT_MESSAGE_ERROR;
+// отдельная константа для другого статуса TP
+
+
+if ( $order['order_status'] == "wc-completed" )
+=>
+WOO_COMPLETED_STATUS = "wc-completed";
+if ( $order['order_status'] == WOO_COMPLETED_STATUS )
+// замена статуса строкой на константу с именем
+
+
+if ($action == "setCompleted")
+=>
+COMPLETED_ACTION = "setCompleted";
+if($action === COMPLETED_ACTION)
+// завёл константу, избавился от приведения типов при сравнении
+
+
+if ($action == "setProcessing") {
+=>
+PROCESSING_ACTION = "setProcessing";
+if($action === PROCESSING_ACTION)
+// завёл константу, избавился от приведения типов при сравнении
+
+
+if($_POST['where'] == 'false')
+=>
+if(boolval($_POST['where']) === false)
+// привёл в соответствие с типами данных
