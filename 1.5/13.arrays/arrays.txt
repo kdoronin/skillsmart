@@ -1,0 +1,12 @@
+$params = array(''); // Create the empty 0 index
+$this->_query = $query;
+$stmt = $this->_prepareQuery();
+
+if (is_array($bindParams) === true) {
+    foreach ($bindParams as $prop => $val) {
+        $params[0]
+
+
+// заменил массив из одного элемента на переменную
+
+
