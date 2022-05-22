@@ -69,7 +69,6 @@ class BalancedBST:
                 sum = self.leaves_count(node.RightChild, sum)
             return sum
 
-
     def max_lvl(self, node, lvl):
         if node is None:
             return lvl
