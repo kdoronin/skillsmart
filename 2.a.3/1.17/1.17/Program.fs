@@ -15,6 +15,5 @@ let rec occFromIth_rec = function
 | (s: string, n : int, c : char, i : int) when s.[n] = c -> occFromIth_rec(s, n+1, c, i+1)
 | (s: string, n : int, c : char, i : int) -> occFromIth_rec(s, n+1, c, i)
 
-
 let rec occFromIth = function
 | (s : string,n : int,c : char) -> occFromIth_rec(s,n,c,0)
