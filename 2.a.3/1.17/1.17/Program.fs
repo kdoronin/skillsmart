@@ -1,5 +1,6 @@
 ﻿// 17.1
 let rec pow = function
+| (s,n) when n <= 0 -> printf ""
 | (s,1) -> printf "%s" s
 | (s,n) ->
     printf "%s" s
