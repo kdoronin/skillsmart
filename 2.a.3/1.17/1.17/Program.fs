@@ -1,8 +1,7 @@
 ﻿// 17.1
 let rec pow = function
-| (s,0) -> ""
-| (s,n) -> printf "%s" s
-           pow(s, n-1)
+| (s,1) -> s
+| (s,n) -> s + pow(s, n-1)
 
 // 17.2
 let rec isIthChar = function
