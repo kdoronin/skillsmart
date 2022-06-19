@@ -12,5 +12,3 @@ let rec min f =
     while f i <> 0 do
         i <- i + 1
     i
-let f1 x = x*x - 64
-let m1 = min f1
