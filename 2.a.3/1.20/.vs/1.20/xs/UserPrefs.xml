@@ -1,14 +1,14 @@
-﻿<Properties StartupConfiguration="{20D5EBF6-538C-442A-B552-D6BA9F4928E5}|Default">
+﻿<Properties StartupConfiguration="{D53FD823-982C-47B8-8E71-D0B8A5DA1C5E}|Default">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="1.17/Program.fs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="1.20/Program.fs">
     <Files>
-      <File FileName="1.17/Program.fs" Line="22" Column="59" />
+      <File FileName="1.20/Program.fs" Line="14" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="1.17" expanded="True">
-            <Node name="1.17" expanded="True" />
+          <Node name="1.20" expanded="True">
+            <Node name="1.20" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -18,9 +18,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.1.17 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.1.20 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
