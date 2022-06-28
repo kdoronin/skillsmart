@@ -23,7 +23,9 @@ let (.-.) x y =
                 silverx <- silverx + 20 - 1
                 copperx <- copperx + 12 - coppery
             else
-                copperx <- copperx - coppery
+                copperx <- 0
+                silverx <- 0
+                goldx <- 0
     else
         copperx <- copperx - coppery
     if silvery > silverx then
@@ -31,27 +33,34 @@ let (.-.) x y =
             goldx <- goldx - 1
             silverx <- silverx + 20 - silvery
         else
-            silverx <- silverx - silvery
+            copperx <- 0
+            silverx <- 0
+            goldx <- 0
     else
         silverx <- silverx - silvery
-    goldx <- goldx - goldy
+    if goldy > goldx then
+        goldx <- 0
+        silverx <- 0
+        copperx <- 0
+    else
+        goldx <- goldx - goldy
     (goldx, silverx, copperx)
 
 
 // 23.4.2
-//let (.+) x y = ...
-//let (.-) x y = ...
-//let (.*) x y = ...
-//let (./) x y = ...
-
-let c = (1, 38, 10) .+. (2, 1, 1)
-let (goldres, silverres, copperres) = c
-let (goldmin, silvermin, coppermin) = (3, 19, 10) .-. (2, 2, 11)
-
-printf "Gold: %d \n" goldres
-printf "Silver: %d \n" silverres
-printf "Copper: %d \n" copperres
-printf "\n _______ \n\n"
-printfn "Gold: %d" goldmin
-printfn "Silver: %d" silvermin
-printfn "Copper: %d" coppermin
+let (.+) x y =
+    let mutable (a, b) = x
+    let mutable (c, d) = y
+    (a+c, b+d)
+let (.-) x y =
+    let mutable (a, b) = x
+    let mutable (c, d) = y
+    (a - c, b - d)
+let (.*) x y =
+    let mutable (a, b) = x
+    let mutable (c, d) = y
+    (a*c - b*d, b*c + a*d)
+let (./) x y =
+    let mutable (a:float, b:float) = x
+    let mutable (c:float, d:float) = y
+    ((a*c + b*d) / (c*c + d*d), (b*c - a*d) / (c*c + d*d))
