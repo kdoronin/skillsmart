@@ -16,9 +16,9 @@ let rec dnto (n:int) =
 
 // 34.3
 let rec evenn (n:int) =
-    let mutable result = [n*2]
-    let mutable i = 2*(n - 1)
-    while i > 0 do
+    let mutable result = [(n-1)*2]
+    let mutable i = 2*(n - 2)
+    while i >= 0 do
         result <- i :: result
         i <- i - 2
     result
