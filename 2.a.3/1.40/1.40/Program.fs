@@ -22,7 +22,7 @@ let insert (xs, n) =
     | ([], n, inserthead) -> inserthead @ [n]
     | (head::tail, n, inserthead) when head >= n -> inserthead @ n::head::tail
     | (head::head2::tail, n, inserthead) when head < n && head2 >= n -> inserthead @ head::n::head2::tail
-    | (head::tail, n, inserthead) -> insertloop(tail, n, head::inserthead)
+    | (head::tail, n, inserthead) -> insertloop(tail, n, inserthead @ [head])
     insertloop(xs, n, [])
 
 // 40.2.3
