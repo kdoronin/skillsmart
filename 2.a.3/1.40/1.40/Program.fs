@@ -93,9 +93,3 @@ let revrev xs =
     | ([], res) -> res
     | (head::tail, res) -> revrevloop(tail, rev(head)::res)
     revrevloop(xs, [])
-
-
-let rec factorial = function 
-| 0  -> Some(1)
-| n when n > 0 -> Some(n * Option.get(factorial(n - 1)))
-| _  -> None
