@@ -60,11 +60,11 @@ let minus (xs1, xs2) =
 // 40.3.1
 let smallest xs1 =
     let rec smallestloop = function
-    | ([], min) -> min
+    | ([], min) -> Some(min)
     | (head::tail, min) when head < min -> smallestloop(tail, head)
     | (head::tail, min) -> smallestloop(tail, min)
-    let mainhead::maintail = xs1
-    smallestloop(maintail, mainhead)
+    let headmain::tailmain = xs1
+    smallestloop(tailmain, headmain)
 
 // 40.3.2
 let delete (n, xs) =
@@ -78,7 +78,7 @@ let delete (n, xs) =
 let sort xs = 
     let rec sortloop = function
     | ([], res) -> res
-    | (xs , res) -> sortloop(delete(smallest(xs), xs), res @ [smallest(xs)])
+    | (xs , res) -> sortloop(delete(smallest(xs).Value, xs), res @ [smallest(xs).Value])
     sortloop(xs, [])
 
 let rev xs =
@@ -93,3 +93,9 @@ let revrev xs =
     | ([], res) -> res
     | (head::tail, res) -> revrevloop(tail, rev(head)::res)
     revrevloop(xs, [])
+
+
+let rec factorial = function 
+| 0  -> Some(1)
+| n when n > 0 -> Some(n * Option.get(factorial(n - 1)))
+| _  -> None

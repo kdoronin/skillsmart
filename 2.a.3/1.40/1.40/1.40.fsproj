@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Compile Include="Program.fs" />
-    <Compile Include="onemore.fs" />
   </ItemGroup>
 
 </Project>
