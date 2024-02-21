@@ -1,0 +1,179 @@
+1. Пример для п. 10. Самого метода достаточно и вставка-комментарий излишня
+/**
+* Add hooks for Sorter class
+*
+* @method defineSorterHooks
+*
+* @return void
+* @since 0.1.0
+*/
+private function defineSorterHooks():
+
+
+2. Пример для п. 10. Самого метода достаточно
+/**
+* Add plugin hooks for admin panel
+*
+* @method defineAdminHooks
+*
+* @return void
+* @since 0.1.0
+*/
+private function defineAdminHooks(): void
+
+
+3. Пример для п. 10. Самого метода достаточно
+
+/**
+* Check plugin dependencies on activate
+*
+* @method checkDependencies
+*
+* @return void
+* @since 0.1.0
+*/
+private static function checkDependencies(): void
+
+
+4. Пример для п. 10. Самого метода достаточно. Помимо прочего, второе предложение может быть избыточным (п. 7 и п. 4)
+
+/**
+* Main activation method. Call another methods and check user premissions
+*
+* @method activate
+*
+* @return void
+* @since
+*/
+public static function activate(): void
+
+
+5. Пример для п. 10. Самого метода достаточно
+
+/**
+* Prepare action adding
+*
+* @param $hook
+* @param $component
+* @param $callback
+* @param $priority
+* @param $acceptedArgs
+*
+* @return void
+* @since 0.1.0
+*/
+public function addAction($hook, $component, $callback, $priority = 10, $acceptedArgs = 1):
+
+
+6. Пример для п. 10. Самого метода достаточно
+
+/**
+* Prepare filter adding
+*
+* @param $hook
+* @param $component
+* @param $callback
+* @param $priority
+* @param $acceptedArgs
+* @method addFilter
+*
+* @return void
+* @since 0.1.0
+*/
+public function addFilter($hook, $component, $callback, $priority = 10, $acceptedArgs = 1): void
+
+
+7. Комментарий из п.4. Ничего, кроме шума, не даёт.
+
+// Require the author post type class file
+require_once( AUTHORS_KD_DIR . '/classes/class-author-cpt.php' );
+
+
+8. Комментарий из п.4. Имя файла говорит само за себя
+
+// Require the author admin class file
+require_once( AUTHORS_KD_DIR . '/admin/class-author-admin.php' );
+
+
+9. Шум. Тем более, использующийся повсеместно
+
+// Block direct access to file
+defined( 'ABSPATH' ) or die( 'Not Authorized!' );
+
+
+10. Пример для п. 10. Самого метода достаточно
+
+/**
+* Callback function for basic metafields
+*
+* @param $post
+* @method meta_box_callback
+*
+* @return void
+* @since 0.1.0
+*/
+public function meta_box_callback( $post ) {
+}
+
+
+11. Пример для п. 10. Самого метода достаточно
+
+/**
+* Create custom meta boxes
+*
+* @method create_meta_box
+*
+* @return void
+* @since 0.1.0
+*/
+public function create_meta_box() {
+}
+
+
+12. Пример для п. 10. Самого метода достаточно
+
+/**
+* Transform meta fields to correct slug format
+*
+* @param $text
+* @method transform_to_slug
+*
+* @return mixed
+* @since 0.1.0
+*/
+private function transform_to_slug( $text ) {
+}
+
+
+13. Пример для п. 10. Самого метода достаточно
+
+/**
+* Register all scripts and styles for admin panel
+*
+* @method register_admin_scripts
+*
+* @return mixed
+* @since 0.1.0
+*/
+public function register_admin_scripts() {
+}
+
+
+14. Пример для п. 10. Самого метода достаточно
+
+/**
+* Enqueue all styles and scripts on admin panel
+*
+* @method add_admin_scripts
+*
+* @return mixed
+* @since 0.1.0
+*/
+public function add_admin_scripts() {
+}
+
+
+15. Комментарий из п.4. Имя файла говорит само за себя
+
+// Require the author public class file
+require_once(AUTHORS_KD_DIR . '/public/class-author-public.php');

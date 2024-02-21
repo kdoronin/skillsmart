@@ -1,0 +1,37 @@
+1.
+// Изменяет запрос, добавляя сортировку по значению из таблицы БД
+public function updateProductQuery($clauses, $query)
+
+
+2.
+// Шорткод для того, чтобы исправить заказ, которы по каким-либо причинам не был добавлен в таблицу БД
+add_shortcode('fix_orders', 'fix_orders_func');
+function fix_orders_func($atts){
+
+}
+
+
+3.
+// Вспомогательная функция для "отката" излишне учтённого дохода в Google Analytics
+function removeOrderFromAnalytics()
+
+
+4.
+// Проверка на то, что товары в корзине принадлежат одному региону
+add_action('woocommerce_checkout_before_customer_details', function () {
+    if (is_checkout()) {
+
+5.
+// Обновляет данные о сортировке в мета-таблице при сохранении страницы
+add_action('wp_ajax_sorting_save', function () {
+}
+
+6.
+// Отправляет уведомления во все системы оповещений
+function push_notification_if_payment_complete($order_id)
+{
+}
+
+7.
+// изменение статуса заказа в таблице агрегации
+add_action('woocommerce_order_status_changed', function ($order_id, $old_status, $new_status, $order) {

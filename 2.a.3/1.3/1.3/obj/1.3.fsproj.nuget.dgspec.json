@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/dka/Documents/skillsmart/2.a.3/1.3/1.3/1.3.fsproj": {}
+  },
+  "projects": {
+    "/Users/dka/Documents/skillsmart/2.a.3/1.3/1.3/1.3.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dka/Documents/skillsmart/2.a.3/1.3/1.3/1.3.fsproj",
+        "projectName": "1.3",
+        "projectPath": "/Users/dka/Documents/skillsmart/2.a.3/1.3/1.3/1.3.fsproj",
+        "packagesPath": "/Users/dka/.nuget/packages/",
+        "outputPath": "/Users/dka/Documents/skillsmart/2.a.3/1.3/1.3/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dka/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[6.0.2, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

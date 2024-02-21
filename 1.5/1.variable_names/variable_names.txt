@@ -1,0 +1,36 @@
+output_list – weak_vertices_list
+// список слабых вершин графа
+
+collect_list – graph_vertices_related_vertices_lists
+// массив списков смежных вершин элементов графа
+
+el - current_heap_added_element
+// текущий элемент, добавляемый в кучу
+
+all_nodes – all_nodes_by_value
+// все найденные узлы по значению
+
+$status – $restStatus
+// статус ответа REST endpoint-а
+
+$response – $restResponseArray
+// массив ответа от Rest endpoint-а
+
+$conditionals – $sqlConditionalsArray
+// массив условий для sql-запроса
+
+$agg_meta – $aggregateTableMetaDataArray
+// массив мета-данных для таблицы агрегации
+
+$regularPrice – $productVariationRegularPrice
+// базовая цена вариации продукта
+
+$salePrice - $productVariationSalePrice
+// цена распродажи вариации продукта
+
+start_a – first_half_start_position
+// стартовый индекс в общем массиве первой половины текущего массива
+
+num – node_count
+// количество узлов в дереве
+

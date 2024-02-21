@@ -1,0 +1,109 @@
+1.
+//            'wo' => ['5'], // TODO задел на будущее
+
+//Закомментированная часть кода, которая будет актуальна в будущих версиях ПО
+
+
+2.
+
+foreach ($options as $key => $value) {
+    // only set if valid setting/option
+    if (isset($this->settings[$key])) {
+        $this->settings[$key] = $value;
+    }
+}
+
+// Прояснение
+
+
+3.
+
+// Set the native notification host
+if (isset($options['notification_host'])) {
+    $this->settings['notification_host'] = $options['notification_host'];
+} else {
+    $this->settings['notification_host'] = 'nativepush-cluster1.pusher.com';
+}
+
+// Прояснение
+
+
+
+4.
+
+// Set scheme for native notifications
+if (isset($options['notification_scheme'])) {
+    $this->settings['notification_scheme'] = $options['notification_scheme'];
+} else {
+    $this->settings['notification_scheme'] = 'https';
+}
+
+// Прояснение
+
+5.
+
+// ensure host doesn't have a scheme prefix
+$this->settings['host'] = preg_replace('/http[s]?\:\/\//', '', $this->settings['host'], 1);
+
+// Прояснение
+
+
+6.
+
+// Output meta data
+echo \CustomTheme\Helpers\CustomHelpers::translateString(wc_get_formatted_cart_item_data( $cart_item ));
+
+// Прояснение
+
+
+7.
+
+// curl handle is not reusable unless reset
+if (function_exists('curl_reset')) {
+    curl_reset($ch);
+}
+
+// Предупреждение о последствиях + прояснение
+
+
+8.
+
+
+// Set custom curl options
+if (!empty($this->settings['curl_options'])) {
+    foreach ($this->settings['curl_options'] as $option => $value) {
+        curl_setopt($ch, $option, $value);
+    }
+}
+
+// Прояснение
+
+
+9.
+
+// http://localhost/wp-json/shop/order/update-event?event_id=1&order_item_id=1
+
+// Информативный комментарий с форматом запроса для REST endpoint
+
+
+10.
+
+// http://localhost/wp-json/shop/order/update-meta?id=123&metadata[nick_name]=mynickname&metadata[server_name]=simpleserver
+
+// Информативный комментарий с форматом запроса для REST endpoint
+
+
+11.
+
+// http://localhost/wp-json/shop/order/update-status?id=123&new_status=wc-completed
+register_rest_route('shop', 'order/update-status', [
+
+// Информативный комментарий с форматом запроса для REST endpoint
+
+
+12.
+
+// http://localhost/wp-json/shop/order/update-booster?item_id=123&booster_id=123
+register_rest_route('shop', 'order/update-booster', [
+
+// Информативный комментарий с форматом запроса для REST endpoint

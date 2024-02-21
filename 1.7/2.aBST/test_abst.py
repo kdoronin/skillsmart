@@ -1,0 +1,55 @@
+import unittest
+from aBST.abst import aBST
+
+
+class TestaBST(unittest.TestCase):
+    def setUp(self):
+        self.empty_abst = aBST(0)
+        self.only_one_abst = aBST(1)
+        self.full_abst = aBST(3)
+        self.full_abst.AddKey(8)
+        self.full_abst.AddKey(4)
+        self.full_abst.AddKey(12)
+        self.full_abst.AddKey(2)
+        self.full_abst.AddKey(6)
+        self.full_abst.AddKey(10)
+        self.full_abst.AddKey(14)
+        self.full_abst.AddKey(1)
+        self.full_abst.AddKey(3)
+        self.full_abst.AddKey(5)
+        self.full_abst.AddKey(7)
+        self.full_abst.AddKey(9)
+        self.full_abst.AddKey(11)
+        self.full_abst.AddKey(13)
+        self.full_abst.AddKey(15)
+
+    def test_add_key(self):
+        self.empty_abst.AddKey(3)
+        self.assertEqual(self.empty_abst.Tree[0], 3)
+        self.only_one_abst.AddKey(2)
+        self.only_one_abst.AddKey(1)
+        self.only_one_abst.AddKey(3)
+        self.assertEqual(self.only_one_abst.Tree[0], 2)
+        self.assertEqual(self.only_one_abst.Tree[1], 1)
+        self.assertEqual(self.only_one_abst.Tree[2], 3)
+        self.assertEqual(self.only_one_abst.tree_size, 3)
+        self.assertEqual(self.empty_abst.tree_size, 1)
+        self.assertEqual(self.full_abst.tree_size, 15)
+        self.assertEqual(self.full_abst.Tree[0], 8)
+        self.assertEqual(self.full_abst.Tree[14], 15)
+        my_return = self.full_abst.AddKey(25)
+        self.assertEqual(my_return, -1)
+
+    def test_find_key_index(self):
+        find_one = self.empty_abst.FindKeyIndex(3)
+        self.assertEqual(find_one, 0)
+        find_two = self.full_abst.FindKeyIndex(8)
+        self.assertEqual(find_two, 0)
+        find_three = self.full_abst.FindKeyIndex(1)
+        self.assertEqual(find_three, 7)
+        find_four = self.full_abst.FindKeyIndex(11)
+        self.assertEqual(find_four, 12)
+        find_five = self.full_abst.FindKeyIndex(16)
+        self.assertIsNone(find_five)
+        find_six = self.only_one_abst.FindKeyIndex(3)
+        self.assertEqual(find_six, 0)

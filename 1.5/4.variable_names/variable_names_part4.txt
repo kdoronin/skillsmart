@@ -1,0 +1,35 @@
+$validateIsNumeric – $isNumber
+// является ли числом
+
+max – maxPrice
+// максимальная цена
+
+min – minPrice
+// минимальная цена
+
+step – priceStep
+// шаг цены
+
+length –blockLength
+// длина блока
+
+$result – $curlResult
+// результат запроса
+
+$message – $notification
+// уведомление
+
+$cdv – $productData
+// данные продукта в массиве
+
+$name – $pluginName
+// название плагина
+
+$type – $productType
+// тип продукта
+
+$loop – $eventLoop
+// цикл, в котором обрабатываются события
+
+$average – $averageRating
+// средний рейтинг

@@ -1,0 +1,48 @@
+1.
+$params = array(''); // Create the empty 0 index
+$this->_query = $query;
+$stmt = $this->_prepareQuery();
+
+if (is_array($bindParams) === true) {
+    foreach ($bindParams as $prop => $val) {
+        $params[0]
+
+
+// заменил массив из одного элемента на переменную
+
+
+2.
+
+public function transform($order): OrderDTO
+    {
+        $order_array = [];
+        $meta = json_decode($order[0]->order_meta);
+
+// в вызове метода исключил вариант, когда в $order может попасть массив, что позволило избавиться от обращению по индексу
+
+
+3.
+
+$prices = array_values($prices);
+$min_price = $prices[0];
+$max_price = end($prices);
+
+// изменил обращение к базе данных за ценами, чтобы получать их в ассоциативном массиве
+
+
+4.
+
+function collectQuery($query)
+{
+    if ($query[0] == "@") {
+    }
+
+// Изменил вызов метода, чтобы не допустить передачи в него массива
+
+
+5.
+
+for ( $i = 0; $i < count( $query_result ); $i++ ) {
+            $order_array = $query_result[$i];
+
+// Заменил обход по индексам на обход через foreach

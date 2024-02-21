@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "chz8U/+tX4f6GiHgiFloMRl9J61A7WuMNWzaBrY2I84aojSavfGrO9NBN5lNSma9MpxaFoCC2xn4/7ejGBcWIw==",
+  "success": true,
+  "projectFilePath": "/Users/dka/Documents/skillsmart/2.a.3/1.41/1.41/1.41.fsproj",
+  "expectedPackageFiles": [
+    "/Users/dka/.nuget/packages/fsharp.core/6.0.5-beta.22329.3/fsharp.core.6.0.5-beta.22329.3.nupkg.sha512"
+  ],
+  "logs": []
+}

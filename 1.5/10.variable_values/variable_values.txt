@@ -1,0 +1,104 @@
+1.
+if (!empty($_COOKIE['userLastGame'])) {
+                $last_game_slug = $_COOKIE['userLastGame'];
+                $last_game_term = ClassHelpers::getGameBySlug($last_game_slug);
+            } else {
+                $last_game_term = [];
+            }
+
+// удалил переменную $last_game_term, так как далее по коду она не использовалась
+
+2.
+ $default_atts = array();
+            ob_start();
+            self::getShortcodesTemplate('templates/' . $shortcode . '.php', $all_atts);
+            $shortcode_html = ob_get_clean();
+// Удалил объявление переменной $default_atts, так как в текущем контексте она не использовалась
+
+
+3.
+
+$postfix = $is_sale ? '-' . $sale_name : '-' . $popup_name;
+// изменил место определения переменной, так как изначально между объявлением переменной и её использованием было 72 строки
+
+
+4.
+
+$is_sale = $this->isEventStarted($popups, $popup_key);
+// перенёс объявление переменной ближе к её использованию
+
+
+5.
+
+public static function getShopCategories(): array
+// добавил формат возвращаемого значения для предотвращения возникновения недопустимых значений
+
+
+6.
+
+public function updateOrderStatus(int $order_id, $order_status): void
+// явное добавление формата возвращаемого значения (или его отсутствия)
+
+
+7.
+
+public function registerRestEndpoint(WP_REST_Request $request): void
+// добавление формата возвращаемого значения (или его отсутствия)
+
+
+8.
+
+public function getLangByReferer(): string
+// добавил формат возвращаемого значения
+
+
+9.
+
+public function translateUrl($url, $language = ''): string
+// добавил формат возвращаемого значения
+
+
+10.
+
+public function registerRestEndpoint(WP_REST_Request $request): void
+// добавил формат возвращаемого значения
+
+
+11.
+
+$offset = ($this->productFilter->page - 1) * $this->productFilter->pageSize;
+$length = $this->productFilter->pageSize;
+$response = array_slice($response, $offset, $length);
+$result = [];
+$result = [
+    'meta' => [
+        'total' => count($response)
+    ],
+    'data' => array_values($response)
+];
+// перенёс объявление переменной и изменил присваивание элементам массива
+
+
+12.
+
+private function transform_to_slug( string $text ): string
+// добавил явное определение типов
+
+
+13.
+
+private function get_all_users(): array
+// добавил тип возвращаемого значения
+
+
+14.
+
+public function register_admin_scripts(): void
+// добавил типов возвращаемого значения
+
+
+15.
+
+public function add_admin_scripts(): void
+// добавил тип возвращаемого значения
+
